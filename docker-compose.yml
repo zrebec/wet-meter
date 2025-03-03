@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    container_name: soak-meter
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./src:/var/www/html
+      - ./data:/var/www/data
+    restart: unless-stopped
